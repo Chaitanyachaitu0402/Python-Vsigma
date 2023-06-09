@@ -2,22 +2,22 @@
 
 import numpy as np
 
-# x = np.array([1,2,3,4,5])
-# print(x)
-# print(type(x))
-# print(x.ndim)
+x = np.array([1,2,3,4,5])
+print(x)
+print(type(x))
+print(x.ndim)
 
-# y=[1,2,3,4]
-# print(y)
-# print(type(y))
+y=[1,2,3,4]
+print(y)
+print(type(y))
 
-# # Creating the Numpy Array
+# Creating the Numpy Array
 
-# l = []
-# for i in range(1,5):
-#     int_1 = int(input("enter : "))
-#     l.append(int_1)
-# print(np.array(l))  
+l = []
+for i in range(1,5):
+    int_1 = int(input("enter : "))
+    l.append(int_1)
+print(np.array(l))  
 
 # Types of the arrays
 
