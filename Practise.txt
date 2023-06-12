@@ -1,11 +1,11 @@
 Introduction to the Numpy and Pandas and Matplotlib
 
-Numpy:
+#Numpy:
 
 ->Numpy is the fundamental package for scientific computing in the Python
 ->Numpy is a python library that provides a multidimensional array object, various derived objects
 
-Numpy Array:
+#Numpy Array:
 
 ->An array is a grid of values ana it contains information about the raw data,how to locate an element, and how to interpret an element
 ->There are different types of the array that are as follows:
@@ -14,7 +14,7 @@ Numpy Array:
     ->3D Array
     ->Multidimensional Array
 
-Numpy vs Python List:
+#Numpy vs Python List:
 
 ->Consumes less memory
 ->fast as compared to the python List
@@ -25,3 +25,44 @@ Installation Numpy:
 
 Import Numpy:
 ->Import numpy as np
+
+#Special Numpy Array:
+
+->Array filled with 0'scientific
+->Array filled with 1'scientific
+->Create an empty array
+->An Array with a range of elements
+->Array diagonal element filled with 1'scientific
+->Create an array with values that are spaced linearly in a specfied interval
+
+#Create Numpy Arrays with Random Numbers
+
+->rand()
+    the function is used to generate a random value between 0 to 1.
+->randn()
+    the function is used to generate a random value close to zero. This may return positive or negative numbers as well.
+->ranf()
+    the function for doing random sampling in numpy. it returns an array of specified shape and fills it with random floats in the half open interval [0.0,1.0)
+->randint()
+    the function is used to generate a random number between the given range        
+
+#Datatypes in Numpy Array
+
+->int8
+->int16
+->int32
+->int64
+->float8
+->float16
+->float32
+->boolean
+->unsigned
+
+#Arthmetic Operations in the Numpy Arrays
+
+->Addtion
+->Subtraction
+->Divison
+->Module Divison
+->Reciprocal
+
