@@ -66,3 +66,26 @@ Import Numpy:
 ->Module Divison
 ->Reciprocal
 
+
+#Arthmetic Functions in Numpy Arrays
+
+->np.min(x)
+->np.max(x)
+->np.argmin(x)
+->np.sqrt(x)
+->np.sin(x)
+->np.cos(x)
+->np.cumsum(x)
+
+#Shape and Reshaping in the Numpy Arrays
+
+->Shape 
+->Reshape
+
+#Indexing and Slicing in the Numpy Arrays
+
+->Indexing:
+    Indexing are in the pyhton which shows or which will knowin ght states of the elements in the Array
+
+->Slicing:
+    Slicing in the python is which is uses to get the data whcih is present in the array by using the indexing numbers and whcih can get the in between numbers by using the slicing
