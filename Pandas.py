@@ -97,9 +97,59 @@ def custom_agg(x):
 custom_result = df.groupby('City')['Age'].agg(custom_agg)
 print(custom_result)
 
+# Reshaping with pivot()
+data = {'Name': ['John', 'Emma', 'Mike'],
+        'Subject': ['Math', 'English', 'Science'],
+        'Score': [85, 92, 78]}
+df = pd.DataFrame(data)
 
-# Histogram
-df['Age'].plot(kind='hist')
+df_pivot = df.pivot(index='Name', columns='Subject', values='Score')
+print(df_pivot)
+
+# Creating a pivot table with pivot_table()
+df_pivot_table = df.pivot_table(index='Name', columns='Subject', values='Score', aggfunc='mean')
+print(df_pivot_table)
+
+# Unstacking with stack() and unstack()
+df_stacked = df_pivot.stack()
+print(df_stacked)
+
+df_unstacked = df_stacked.unstack()
+print(df_unstacked)
+
+# Creating a DataFrame with DateTimeIndex
+date_range = pd.date_range(start='2023-01-01', periods=10, freq='D')
+data = {'Sales': [100, 150, 200, 175, 300, 250, 400, 375, 200, 150]}
+df = pd.DataFrame(data, index=date_range)
+print(df)
+
+# Resampling to monthly frequency
+df_monthly = df.resample('M').sum()
+print(df_monthly)
+
+# Shifting the data by 1 day
+df_shifted = df.shift(1)
+print(df_shifted)
+
+# Rolling window calculation (moving average)
+rolling_mean = df['Sales'].rolling(window=3).mean()
+print(rolling_mean)
+
+# Converting a column to categorical
+data = {'Category': ['A', 'B', 'A', 'C', 'B', 'A']}
+df = pd.DataFrame(data)
+
+df['Category'] = df['Category'].astype('category')
+print(df['Category'])
+
+# Counting categorical values
+value_counts = df['Category'].value_counts()
+print(value_counts)
+
+# Renaming and reordering categories
+df['Category'] = df['Category'].cat.rename_categories({'A': 'High', 'B': 'Medium', 'C': 'Low'})
+df['Category'] = df['Category'].cat.reorder_categories(['Low', 'Medium', 'High'], ordered=True)
+print(df['Category'])
 
 
 
