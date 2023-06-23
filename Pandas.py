@@ -151,6 +151,62 @@ df['Category'] = df['Category'].cat.rename_categories({'A': 'High', 'B': 'Medium
 df['Category'] = df['Category'].cat.reorder_categories(['Low', 'Medium', 'High'], ordered=True)
 print(df['Category'])
 
+import pandas as pd
+
+# Create a DataFrame
+data = {'Name': ['John', 'Emma', 'Mike', 'Emily', 'Daniel'],
+        'Subject': ['Math', 'English', 'Math', 'Science', 'Science'],
+        'Score': [85, 92, 78, 90, 88]}
+df = pd.DataFrame(data)
+
+# Group by 'Subject' and calculate the average score
+group_by_subject = df.groupby('Subject')
+avg_score = group_by_subject['Score'].mean()
+print(avg_score)
+
+import pandas as pd
+
+# Create a DataFrame with DateTimeIndex
+date_range = pd.date_range(start='2023-01-01', periods=5, freq='D')
+data = {'Sales': [100, 150, 200, 175, 300]}
+df = pd.DataFrame(data, index=date_range)
+
+# Resample to monthly frequency
+monthly_sales = df.resample('M').sum()
+print(monthly_sales)
+
+import pandas as pd
+
+# Create two DataFrames
+data1 = {'Name': ['John', 'Emma', 'Mike'],
+         'Age': [25, 30, 28]}
+df1 = pd.DataFrame(data1)
+
+data2 = {'Name': ['Emma', 'Mike', 'Daniel'],
+         'Salary': [5000, 6000, 7000]}
+df2 = pd.DataFrame(data2)
+
+# Inner join on 'Name'
+merged_df = pd.merge(df1, df2, on='Name', how='inner')
+print(merged_df)
+
+import pandas as pd
+import numpy as np
+
+# Create a DataFrame with missing values
+data = {'Name': ['John', 'Emma', np.nan, 'Daniel'],
+        'Age': [25, np.nan, 28, 32]}
+df = pd.DataFrame(data)
+
+# Drop rows with missing values
+df_dropped = df.dropna()
+print(df_dropped)
+
+# Fill missing values with a specific value
+df_filled = df.fillna('Unknown')
+print(df_filled)
+
+
 
 
 

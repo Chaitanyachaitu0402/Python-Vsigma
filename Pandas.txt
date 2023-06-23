@@ -172,4 +172,19 @@ Performance Optimization:
     Leverage methods like apply(), map(), and transform() for efficient data transformations.
     Utilize the NumPy library for operations that can benefit from its high-performance capabilities.
 
+GroupBy:
+
+    The GroupBy functionality allows you to split a DataFrame into groups based on one or more criteria and perform aggregate operations on each group.
+
+Time Series Operations:
+
+    Pandas provides various functionalities for working with time series data, including resampling, shifting, and rolling window calculations.
+
+Merging and Joining:
+
+    Pandas provides different methods to combine multiple DataFrames based on common columns or indices.
+
+Handling Missing Data:
+
+    Pandas provides methods to handle missing or null values in a DataFrame, such as dropna() to drop rows or columns with missing data and fillna() to fill missing values with specific values.
 
