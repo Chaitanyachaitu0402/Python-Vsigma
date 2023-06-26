@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 # Creating a DataFrame from a dictionary
 data = {'SNO':[1,2,3],'Name': ['John', 'Emma', 'David'],
@@ -151,7 +152,6 @@ df['Category'] = df['Category'].cat.rename_categories({'A': 'High', 'B': 'Medium
 df['Category'] = df['Category'].cat.reorder_categories(['Low', 'Medium', 'High'], ordered=True)
 print(df['Category'])
 
-import pandas as pd
 
 # Create a DataFrame
 data = {'Name': ['John', 'Emma', 'Mike', 'Emily', 'Daniel'],
@@ -164,7 +164,6 @@ group_by_subject = df.groupby('Subject')
 avg_score = group_by_subject['Score'].mean()
 print(avg_score)
 
-import pandas as pd
 
 # Create a DataFrame with DateTimeIndex
 date_range = pd.date_range(start='2023-01-01', periods=5, freq='D')
@@ -175,7 +174,6 @@ df = pd.DataFrame(data, index=date_range)
 monthly_sales = df.resample('M').sum()
 print(monthly_sales)
 
-import pandas as pd
 
 # Create two DataFrames
 data1 = {'Name': ['John', 'Emma', 'Mike'],
@@ -190,9 +188,6 @@ df2 = pd.DataFrame(data2)
 merged_df = pd.merge(df1, df2, on='Name', how='inner')
 print(merged_df)
 
-import pandas as pd
-import numpy as np
-
 # Create a DataFrame with missing values
 data = {'Name': ['John', 'Emma', np.nan, 'Daniel'],
         'Age': [25, np.nan, 28, 32]}
@@ -205,6 +200,75 @@ print(df_dropped)
 # Fill missing values with a specific value
 df_filled = df.fillna('Unknown')
 print(df_filled)
+
+# Create a DataFrame
+data = {'Name': ['John', 'Emma', 'Mike'],
+        'Age': [25, 30, 28]}
+df = pd.DataFrame(data)
+
+# Select rows where age is greater than 28
+selected_rows = df[df['Age'] > 28]
+print(selected_rows)
+
+# Create a DataFrame with MultiIndex
+data = {'Subject': ['Math', 'Math', 'Science', 'Science'],
+        'Name': ['John', 'Emma', 'John', 'Emma'],
+        'Score': [85, 92, 78, 88]}
+df = pd.DataFrame(data)
+
+# Set MultiIndex on Subject and Name columns
+df.set_index(['Subject', 'Name'], inplace=True)
+print(df)
+
+# Create a DataFrame
+data = {'Name': ['John', 'Emma', 'Mike'],
+        'Subject': ['Math', 'English', 'Science'],
+        'Score': [85, 92, 78]}
+df = pd.DataFrame(data)
+
+# Pivot the DataFrame
+pivot_df = df.pivot(index='Name', columns='Subject', values='Score')
+print(pivot_df)
+
+# Create a DataFrame with DateTimeIndex
+date_range = pd.date_range(start='2023-01-01', periods=10, freq='D')
+data = {'Sales': [100, 150, 200, 175, 300, 250, 400, 375, 200, 150]}
+df = pd.DataFrame(data, index=date_range)
+
+# Resample to monthly frequency and calculate the sum
+monthly_sales = df.resample('M').sum()
+print(monthly_sales)
+
+# Create a DataFrame with missing values
+data = {'Name': ['John', 'Emma', np.nan, 'Daniel'],
+        'Age': [25, np.nan, 28, 32]}
+df = pd.DataFrame(data)
+
+# Fill missing values with the mean age
+mean_age = df['Age'].mean()
+df_filled = df.fillna(mean_age)
+print(df_filled)
+
+# Create a DataFrame
+data = {'Name': ['John', 'Emma', 'Mike', 'John'],
+        'Subject': ['Math', 'English', 'Science', 'Math'],
+        'Score': [85, 92, 78, 90]}
+df = pd.DataFrame(data)
+
+# Group by Name and calculate the mean score
+group_means = df.groupby('Name')['Score'].mean()
+print(group_means)
+
+# Create two DataFrames
+df1 = pd.DataFrame({'Name': ['John', 'Emma'],
+                    'Age': [25, 30]})
+df2 = pd.DataFrame({'Name': ['Mike', 'Daniel'],
+                    'Age': [28, 32]})
+
+# Merge the DataFrames based on the Name
+
+
+
 
 
 

@@ -188,3 +188,42 @@ Handling Missing Data:
 
     Pandas provides methods to handle missing or null values in a DataFrame, such as dropna() to drop rows or columns with missing data and fillna() to fill missing values with specific values.
 
+Advanced Indexing and Selection:
+
+    Indexing techniques like boolean indexing, loc, iloc, and query allow you to select specific rows or columns based on conditions.
+
+MultiIndex and Hierarchical Indexing:
+
+    MultiIndex enables you to work with multiple levels of row or column indices, providing a way to represent higher-dimensional data in a tabular format.
+
+Reshaping and Pivot Tables:
+
+    Reshaping operations like stack, unstack, melt, and pivot allow you to transform data between wide and long formats, and pivot tables provide a convenient way to summarize and analyze data.
+
+Time Series Analysis:
+
+    Pandas has extensive tools for working with time series data, including date/time conversion, indexing, resampling, shifting, and rolling window calculations.
+
+Handling Missing Data:
+
+    Pandas provides methods to handle missing or null values in a DataFrame, such as dropna, fillna, and interpolate.
+
+GroupBy Operations:
+
+    GroupBy allows you to split a DataFrame into groups based on one or more criteria and perform aggregate operations on each group.
+
+Merge, Join, and Concatenate:
+
+    Pandas offers various methods to combine multiple DataFrames, such as merge, join, and concatenate, based on common columns or indices.
+
+Categorical Data:
+
+    Categorical data support in pandas allows for efficient storage and analysis of data with a limited number of unique values.
+
+Working with Text Data:
+
+    Pandas provides powerful tools to handle text data, including string methods like split, extract, replace, and regular expression pattern matching.
+    
+Outlier Detection and Handling:
+
+    Pandas offers methods to detect and handle outliers in data, such as using z-scores, percentiles, or statistical techniques like Tukey's fences.
