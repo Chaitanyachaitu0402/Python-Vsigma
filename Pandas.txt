@@ -227,3 +227,23 @@ Working with Text Data:
 Outlier Detection and Handling:
 
     Pandas offers methods to detect and handle outliers in data, such as using z-scores, percentiles, or statistical techniques like Tukey's fences.
+
+Merging, Joining, and Concatenating DataFrames:
+
+    Pandas provides functions like merge(), join(), and concat() to combine multiple DataFrames based on common columns or indices.
+
+Handling Duplicate Data:
+
+    Pandas provides methods to detect and remove duplicate rows in a DataFrame using duplicated() and drop_duplicates().
+
+Pivoting and Melting DataFrames:
+
+    Pivoting allows you to reshape a DataFrame by converting values of one column into multiple columns, while melting converts a wide DataFrame into a long format.
+
+Handling Categorical Data:
+
+    Pandas supports categorical data types, which can be used to efficiently store and analyze data with a limited number of unique values.
+
+Advanced GroupBy Operations:
+
+    GroupBy operations in pandas allow for advanced aggregation and transformation on grouped data, using functions like agg(), transform(), and apply().

@@ -316,6 +316,57 @@ upper_fence = q3 + 1.5 * iqr
 outliers = df[(df['Scores'] < lower_fence) | (df['Scores'] > upper_fence)]
 print(outliers)
 
+# Create two DataFrames
+df1 = pd.DataFrame({'A': [1, 2, 3],
+                    'B': ['a', 'b', 'c']})
+df2 = pd.DataFrame({'A': [4, 5, 6],
+                    'B': ['d', 'e', 'f']})
+
+# Concatenate the DataFrames vertically
+result = pd.concat([df1, df2], ignore_index=True)
+print(result)
+
+# Create a DataFrame with duplicate rows
+data = {'A': [1, 2, 3, 2],
+        'B': ['a', 'b', 'c', 'b']}
+df = pd.DataFrame(data)
+
+# Remove duplicate rows
+df_unique = df.drop_duplicates()
+print(df_unique)
+
+# Create a DataFrame
+data = {'ID': [1, 2, 3],
+        'Math': [85, 92, 78],
+        'Science': [90, 88, 95]}
+df = pd.DataFrame(data)
+
+# Melt the DataFrame
+df_melted = pd.melt(df, id_vars='ID', var_name='Subject', value_name='Score')
+print(df_melted)
+
+# Create a DataFrame with a categorical column
+data = {'Category': ['A', 'B', 'A', 'C']}
+df = pd.DataFrame(data)
+
+# Convert the Category column to categorical
+df['Category'] = pd.Categorical(df['Category'], categories=['A', 'B', 'C'], ordered=True)
+print(df['Category'])
+
+# Create a DataFrame
+data = {'Name': ['John', 'Emma', 'Mike', 'John'],
+        'Subject': ['Math', 'English', 'Science', 'Math'],
+        'Score': [85, 92, 78, 90]}
+df = pd.DataFrame(data)
+
+# Group by Name and calculate multiple aggregate statistics
+group_stats = df.groupby('Name')['Score'].agg(['mean', 'min', 'max'])
+print(group_stats)
+
+
+
+
+
 
 
 
