@@ -265,7 +265,60 @@ df1 = pd.DataFrame({'Name': ['John', 'Emma'],
 df2 = pd.DataFrame({'Name': ['Mike', 'Daniel'],
                     'Age': [28, 32]})
 
-# Merge the DataFrames based on the Name
+# Merge the DataFrames based on the Name column
+merged_df = pd.merge(df1, df2, on='Name')
+print(merged_df)
+
+# Create a DataFrame with a categorical column
+data = {'Name': ['John', 'Emma', 'Mike'],
+        'Grade': ['A', 'B', 'A']}
+df = pd.DataFrame(data)
+
+# Convert the Grade column to categorical
+df['Grade'] = pd.Categorical(df['Grade'], categories=['A', 'B', 'C'], ordered=True)
+print(df['Grade'])
+
+# Create a DataFrame with a text column
+data = {'Name': ['John Smith', 'Emma Johnson', 'Mike Davis']}
+df = pd.DataFrame(data)
+
+# Extract first names
+df['First Name'] = df['Name'].str.split().str[0]
+print(df)
+
+# Create a DataFrame
+data = {'Scores': [85, 92, 78, 90, 250]}
+df = pd.DataFrame(data)
+
+# Calculate Tukey's fences
+q1 = df['Scores'].quantile(0.25)
+q3 = df['Scores'].quantile(0.75)
+iqr = q3 - q1
+lower_fence = q1 - 1.5 * iqr
+upper_fence = q3 + 1.5 * iqr
+
+# Identify outliers
+outliers = df[(df['Scores'] < lower_fence) | (df['Scores'] > upper_fence)]
+print(outliers)
+
+# Create a DataFrame
+data = {'Scores': [85, 92, 78, 90, 250]}
+df = pd.DataFrame(data)
+
+# Calculate Tukey's fences
+q1 = df['Scores'].quantile(0.25)
+q3 = df['Scores'].quantile(0.75)
+iqr = q3 - q1
+lower_fence = q1 - 1.5 * iqr
+upper_fence = q3 + 1.5 * iqr
+
+# Identify outliers
+outliers = df[(df['Scores'] < lower_fence) | (df['Scores'] > upper_fence)]
+print(outliers)
+
+
+
+
 
 
 
