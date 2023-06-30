@@ -190,3 +190,52 @@ ax.set_title('3D Surface Plot')
 
 # Display the plot
 plt.show()
+
+# Example 10
+
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+import numpy as np
+
+# Data
+x = np.linspace(-5, 5, 100)
+y = np.linspace(-5, 5, 100)
+X, Y = np.meshgrid(x, y)
+Z = np.sin(np.sqrt(X**2 + Y**2))
+
+# Create a figure and an axis for 3D plot
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+
+# Plot the 3D surface
+ax.plot_surface(X, Y, Z, cmap='coolwarm')
+
+# Add an annotation
+ax.text(2, 2, 1, 'Peak')
+
+# Display the plot
+plt.show()
+
+# Example 11
+
+import matplotlib.pyplot as plt
+
+# Data
+x = [1, 2, 3, 4, 5]
+y1 = [2, 4, 6, 8, 10]
+y2 = [1, 3, 5, 7, 9]
+
+# Create a figure with custom subplot arrangement
+fig, axs = plt.subplots(2, 2, figsize=(8, 6))
+
+# Plot on each subplot
+axs[0, 0].plot(x, y1)
+axs[0, 1].plot(x, y2)
+axs[1, 0].scatter(x, y1)
+axs[1, 1].scatter(x, y2)
+
+# Adjust spacing between subplots
+plt.tight_layout()
+
+# Display the plots
+plt.show()
