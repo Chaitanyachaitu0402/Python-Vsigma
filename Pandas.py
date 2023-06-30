@@ -361,4 +361,4 @@ df = pd.DataFrame(data)
 
 # Group by Name and calculate multiple aggregate statistics
 group_stats = df.groupby('Name')['Score'].agg(['mean', 'min', 'max'])
-print(group_stats)
+print(group_stats) 
